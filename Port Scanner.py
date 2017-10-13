@@ -1,22 +1,22 @@
 import socket, subprocess,sys
 from datetime import datetime
 subprocess.call('clear',shell=True)
-rmip = input("Digite o ip do host:")
-r1 = int(input("Digite a port inicial"))
-r2 = int (input("Digite a porta final"))
+ip = input("Digite o ip do host:")
+var1 = int(input("Digite a port inicial"))
+var2 = int (input("Digite a porta final"))
 print ("#"*40)
-print ("\n Scanner em andamento ",rmip)
+print ("\n Scanner em andamento ",ip)
 print ("#"*40)
 
 t1= datetime.now()
 try:
-     for port in range(r1,r2):
+     for port in range(var1,var2):
          sock= socket.socket(socket.AF_INET,socket.SOCK_STREAM)
          socket.setdefaulttimeout(1)
-         result = sock.connect_ex((rmip,port))
+         result = sock.connect_ex((ip,port))
      if result==0:
          print ("Porta Aberta:-->\t", port)
-         # print desc[port]
+       #####----#####
      sock.close()
 except KeyboardInterrupt:
      print ("Finalizado ")
